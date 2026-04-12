@@ -1,6 +1,7 @@
 <?php
     session_start();
     include('includes/dbconn.php');
+
     if(isset($_POST['login']))
     {
     $email=$_POST['email'];
@@ -86,7 +87,7 @@
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
             style="background:url(../assets/images/big/auth-bg.jpg) no-repeat center center;">
-            <div class="auth-box row">
+            <div class="auth-box row" style="width: 100%;">
                 <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(assets/images/Homestay-img.jpg);">
                 </div>
                 <div class="col-lg-5 col-md-7 bg-white">
@@ -115,7 +116,10 @@
                                 <div class="col-lg-12 text-center">
                                     <button type="submit" name="login" class="btn btn-block btn-dark">LOGIN</button>
                                 </div>
-                                <div class="col-lg-12 text-center mt-5">
+                                <div class="col-lg-12 text-center mt-3">
+                                    <a href="register.php" class="btn btn-block btn-outline-dark">REGISTER</a>
+                                </div>
+                                <div class="col-lg-12 text-center mt-4">
                                    <a href="admin/index.php" class="text-danger">Go to Admin Panel</a>
                                 </div>
                             </div>

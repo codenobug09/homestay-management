@@ -1,4 +1,17 @@
 <!-- Sidebar navigation-->
+<?php
+$adminUnreadCount = 0;
+if (isset($mysqli)) {
+    $tableCheck = $mysqli->query("SHOW TABLES LIKE 'messages'");
+    if ($tableCheck && $tableCheck->num_rows > 0) {
+        $result = $mysqli->query("SELECT COUNT(*) AS unread FROM messages WHERE receiver_role='admin' AND receiver_id=0 AND is_read=0");
+        if ($result) {
+            $row = $result->fetch_assoc();
+            $adminUnreadCount = (int) ($row['unread'] ?? 0);
+        }
+    }
+}
+?>
 <nav class="sidebar-nav">
 
     <ul id="sidebarnav">
@@ -34,6 +47,10 @@
         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="manage-courses.php"
         aria-expanded="false"><i class="fas fa-book"></i><span
         class="hide-menu">Manage Courses</span></a></li>
+
+        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="chat.php"
+        aria-expanded="false"><i class="fas fa-comments"></i><span
+        class="hide-menu">Student Chat<?php if ($adminUnreadCount > 0) { ?> <span class="badge badge-pill badge-danger ml-2"><?php echo $adminUnreadCount; ?></span><?php } ?></span></a></li>
                            
     </ul>
 </nav>

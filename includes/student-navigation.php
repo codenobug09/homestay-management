@@ -54,7 +54,31 @@
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-right">
-                        
+                        <?php
+                        $studentChatUnread = 0;
+                        if (isset($mysqli) && isset($_SESSION['id'])) {
+                            $tableCheck = $mysqli->query("SHOW TABLES LIKE 'messages'");
+                            if ($tableCheck && $tableCheck->num_rows > 0) {
+                                $stmt = $mysqli->prepare("SELECT COUNT(*) FROM messages WHERE receiver_role='student' AND receiver_id=? AND is_read=0");
+                                if ($stmt) {
+                                    $studentId = (int) $_SESSION['id'];
+                                    $stmt->bind_param('i', $studentId);
+                                    $stmt->execute();
+                                    $stmt->bind_result($studentChatUnread);
+                                    $stmt->fetch();
+                                    $stmt->close();
+                                }
+                            }
+                        }
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat.php" title="Chat with Admin">
+                                <i class="fas fa-comments"></i>
+                                <?php if ($studentChatUnread > 0): ?>
+                                    <span class="badge badge-pill badge-danger ml-1" style="font-size:0.65rem; vertical-align:top;"><?php echo $studentChatUnread; ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
                         <!-- ============================================================== -->
                         <!-- User profile -->
                         <!-- ============================================================== -->

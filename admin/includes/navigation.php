@@ -54,7 +54,27 @@
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-right">
-                        
+                        <?php
+                        $adminChatUnread = 0;
+                        if (isset($mysqli)) {
+                            $tableCheck = $mysqli->query("SHOW TABLES LIKE 'messages'");
+                            if ($tableCheck && $tableCheck->num_rows > 0) {
+                                $result = $mysqli->query("SELECT COUNT(*) AS unread FROM messages WHERE receiver_role='admin' AND receiver_id=0 AND is_read=0");
+                                if ($result) {
+                                    $row = $result->fetch_assoc();
+                                    $adminChatUnread = (int) ($row['unread'] ?? 0);
+                                }
+                            }
+                        }
+                        ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat.php" title="Student Chat">
+                                <i class="fas fa-comments"></i>
+                                <?php if ($adminChatUnread > 0): ?>
+                                    <span class="badge badge-pill badge-danger ml-1" style="font-size:0.65rem; vertical-align:top;"><?php echo $adminChatUnread; ?></span>
+                                <?php endif; ?>
+                            </a>
+                        </li>
                         <!-- ============================================================== -->
                         <!-- User profile -->
                         <!-- ============================================================== -->
