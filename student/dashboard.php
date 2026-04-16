@@ -73,7 +73,6 @@
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
-    <link href="../dist/css/custom-colors-v2.css" rel="stylesheet">
     <style>
         #room-chatbot {
             position: fixed;
@@ -102,7 +101,7 @@
         }
 
         .chatbot-toggle::before {
-            content: '????';
+            content: '💬';
             font-size: 18px;
         }
 
@@ -433,8 +432,8 @@
                     <div class="chatbot-subtitle">Find the best room using your budget and preferences.</div>
                 </div>
                 <div class="chatbot-header-actions">
-                    <button id="chatbot-clear" type="button" title="Clear conversation">???</button>
-                    <button id="chatbot-close" type="button" title="Close chat">??</button>
+                    <button id="chatbot-clear" type="button" title="Clear conversation">↺</button>
+                    <button id="chatbot-close" type="button" title="Close chat">×</button>
                 </div>
             </div>
             <div id="chatbot-body" class="chatbot-body">
@@ -514,7 +513,7 @@
             }
             var text = 'Available rooms:';
             rooms.forEach(function(room) {
-                text += '\n??? Room ' + room.room_no + ' ??? ' + room.seater + ' seater, $' + room.fees + '/month';
+                text += '\n• Room ' + room.room_no + ' – ' + room.seater + ' seater, $' + room.fees + '/month';
             });
             appendChatMessage('bot', text);
         }
@@ -526,7 +525,7 @@
             }
             var lines = ['Best room matches for you:'];
             rooms.forEach(function(room) {
-                lines.push('??? Room ' + room.room_no + ' ??? ' + room.seater + ' seater, $' + room.fees + '/month');
+                lines.push('• Room ' + room.room_no + ' — ' + room.seater + ' seater, $' + room.fees + '/month');
             });
             appendChatMessage('bot', lines.join('\n'));
         }

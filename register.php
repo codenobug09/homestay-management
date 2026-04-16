@@ -160,7 +160,6 @@ if (!empty($_SESSION['register_data']) && !$showVerification && empty($successMe
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
     <title>Homestay Management System - Register</title>
     <link href="dist/css/style.min.css" rel="stylesheet">
-    <link href="dist/css/custom-colors-v2.css" rel="stylesheet">
     <script type="text/javascript">
     function valid() {
         if(document.registration.password.value != document.registration.cpassword.value) {
@@ -316,4 +315,3 @@ if (!empty($_SESSION['register_data']) && !$showVerification && empty($successMe
 </body>
 
 </html>
-

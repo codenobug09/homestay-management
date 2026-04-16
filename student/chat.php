@@ -18,7 +18,6 @@ check_login();
     <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="../dist/css/style.min.css" rel="stylesheet">
-    <link href="../dist/css/custom-colors-v2.css" rel="stylesheet">
     <style>
         .chat-room {
             min-height: 420px;
@@ -157,7 +156,7 @@ check_login();
                                 <div id="chat-window" class="chat-window">
                                     <div class="message-row admin">
                                         <div class="message-box">Hello! Admin is available to help you. Send your question and wait for a reply.</div>
-                                        <div class="message-meta">Admin ??? now</div>
+                                        <div class="message-meta">Admin • now</div>
                                     </div>
                                 </div>
                                 <div class="chat-action-bar">
@@ -257,5 +256,3 @@ check_login();
 </body>
 
 </html>
-
-

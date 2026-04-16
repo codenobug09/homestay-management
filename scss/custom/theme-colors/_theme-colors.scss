@@ -1,96 +1,100 @@
 // Theme colors
 #main-wrapper {
-  &[data-layout="vertical"],
-  &[data-layout="horizontal"] {
-    .topbar .top-navbar .navbar-header {
-      &[data-logobg="skin6"] {
-        background: $body-bg;
 
-        .navbar-brand {
-          .dark-logo {
-            display: inline;
-          }
+	&[data-layout="vertical"],
+	&[data-layout="horizontal"] {
+		.topbar .top-navbar .navbar-header {
 
-          .light-logo {
-            display: none;
-          }
-        }
+			&[data-logobg="skin6"] {
+				background: $skin6;
 
-        .nav-toggler,
-        .topbartoggler {
-          color: $body-color;
-        }
-      }
-    }
+				.navbar-brand {
+					.dark-logo {
+						display: inline;
+					}
 
-    .topbar .navbar-collapse,
-    .topbar {
-      &[data-navbarbg="skin6"] {
-        background: $body-bg;
-      }
-    }
+					.light-logo {
+						display: none;
+					}
+				}
 
-    /*This is for the sidebar bg*/
-    .left-sidebar {
-      &[data-sidebarbg="skin6"] {
-        background: $skin6;
+				.nav-toggler,
+				.topbartoggler {
+					color: $body-color;
+				}
+			}
+		}
 
-        .sidebar-nav {
-          ul {
-            .list-divider {
-              background: $sidebar-text-dark;
-            }
+		.topbar .navbar-collapse,
+		.topbar {
+			&[data-navbarbg="skin6"] {
+				background: $body-bg;
+			}
+		}
 
-            .sidebar-item {
-              .sidebar-link {
-                color: $sidebar-text-dark;
+		/*This is for the sidebar bg*/
+		.left-sidebar {
+				&[data-sidebarbg="skin6"] {
+					background: $skin6;
 
-                .feather-icon,
-                i {
-                  color: $sidebar-icons-dark;
-                }
-              }
+					.sidebar-nav {
+						ul {
+							.list-divider {
+								background: $sidebar-text-dark;
+							}
 
-              .first-level {
-                .sidebar-item.active {
-                  > .sidebar-link.active,
-                  > .sidebar-link.active > i {
-                    color: $dark;
-                  }
-                }
-              }
+							.sidebar-item {
+								.sidebar-link {
+									color: $sidebar-text-dark;
 
-              &.selected > .sidebar-link {
-                .feather-icon,
-                i {
-                  color: $white;
-                }
-              }
-            }
+									.feather-icon,
+									i {
+										color: $sidebar-icons-dark;
+									}
+								}
 
-            .nav-small-cap {
-              color: $black;
-            }
-          }
+								.first-level {
+									.sidebar-item.active {
+										>.sidebar-link.active,
+										>.sidebar-link.active>i {
+											color: $dark;
+										}
+									}
+								}
 
-          .has-arrow {
-            &::after {
-              border-color: $sidebar-text-dark;
-            }
-          }
+								&.selected>.sidebar-link {
+									.feather-icon,
+									i {
+										color: $white;
+									}
+								}
 
-          .user-content,
-          .user-name,
-          .user-email {
-            color: $theme-dark;
-          }
-        }
+								
+							}
 
-        .sidebar-nav li.selected > .has-arrow::after,
-        .sidebar-nav li.selected > .has-arrow.active::after {
-          border-color: $gray-0;
-        }
-      }
-    }
-  }
+							.nav-small-cap {
+								color: $black;
+							}
+						}
+
+						.has-arrow {
+							&::after {
+								border-color: $sidebar-text-dark;
+							}
+						}
+
+						.user-content,
+						.user-name,
+						.user-email {
+							color: $theme-dark;
+						}
+					}
+
+					.sidebar-nav li.selected>.has-arrow::after,
+					.sidebar-nav li.selected>.has-arrow.active::after {
+						border-color: $gray-0;
+					}
+				}
+		}
+	}
 }

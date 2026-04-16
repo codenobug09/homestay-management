@@ -54,7 +54,6 @@
     <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
-    <link href="../dist/css/custom-colors-v2.css" rel="stylesheet">
 
     <script>
     function getSeater(val) {
@@ -682,4 +681,3 @@
     </script>
 
 </html>
-

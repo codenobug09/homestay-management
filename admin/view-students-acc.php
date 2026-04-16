@@ -35,7 +35,6 @@
      <link href="../assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../dist/css/style.min.css" rel="stylesheet">
-    <link href="../dist/css/custom-colors-v2.css" rel="stylesheet">
 
     <script language="javascript" type="text/javascript">
     var popUpWin=0;
@@ -214,4 +213,3 @@
 </body>
 
 </html>
-
